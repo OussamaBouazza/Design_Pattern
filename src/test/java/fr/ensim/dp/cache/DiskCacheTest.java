@@ -1,10 +1,7 @@
 package fr.ensim.dp.cache;
 
 import junit.framework.TestCase;
-
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-
 import static org.junit.Assert.assertArrayEquals;
 
 public class DiskCacheTest extends TestCase {
@@ -12,14 +9,17 @@ public class DiskCacheTest extends TestCase {
     byte [] values = {1,2,3};
 
     public void testSize() {
-        System.out.println(dCache.size());
+        dCache.add("key1", values);
+        assertEquals(3,dCache.size());
     }
 
-    public void testAdd() {
+    public void testAdd() throws IOException {
         assertTrue(dCache.add("key1", values));
+        assertArrayEquals(values, dCache.retreive("key1"));
     }
 
     public void testRetreive() throws IOException {
+        dCache.add("key1", values);
         byte[] retrievedValues = dCache.retreive("key1");
 
         assertArrayEquals(values, retrievedValues);
@@ -27,5 +27,8 @@ public class DiskCacheTest extends TestCase {
     }
 
     public void testClear() {
+        dCache.add("fileKey", values);
+        dCache.clear();
+        assertEquals(0, dCache.size());
     }
 }

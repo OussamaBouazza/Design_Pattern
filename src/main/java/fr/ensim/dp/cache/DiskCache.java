@@ -1,7 +1,6 @@
 package fr.ensim.dp.cache;
 
 import fr.ensim.dp.util.FileUtil;
-
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
@@ -32,9 +31,6 @@ public class DiskCache implements ICache{
             return instance;    //retourne l'instance qui vient d'être crée
         }
     }
-
-
-
 
     @Override
     public long size() {
