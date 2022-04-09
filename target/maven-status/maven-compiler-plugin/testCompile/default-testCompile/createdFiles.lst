@@ -1,0 +1,6 @@
+fr\ensim\dp\cache\DiskCacheTest.class
+fr\ensim\dp\map\player\PlayerTest.class
+fr\ensim\dp\cache\filter\EncryptFilterCacheTest.class
+fr\ensim\dp\cache\filter\ChainOfResponsibility.class
+fr\ensim\dp\cache\MemoryCacheTest.class
+fr\ensim\dp\cache\filter\CompressFilterCacheTest.class

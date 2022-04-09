@@ -23,12 +23,14 @@ public class MemoryCache implements ICache {
         return map.size();
     }
 
+    //ajouter un buffer dans la hashmap
     @Override
     public boolean add(String key, byte[] buf) {
         map.put(key, buf);
         return true;
     }
 
+    //retourne un élément de la hashmap
     @Override
     public byte[] retreive(String key) {
         return map.get(key);
