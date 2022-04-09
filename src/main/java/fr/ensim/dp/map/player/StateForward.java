@@ -3,7 +3,7 @@ package fr.ensim.dp.map.player;
 public class StateForward implements IStatePlayer{
     @Override
     public void play(IPlayer player) {
-        new IllegalStateException();
+        throw new IllegalStateException();
     }
 
     @Override
@@ -13,12 +13,12 @@ public class StateForward implements IStatePlayer{
 
     @Override
     public void pause(IPlayer player) {
-        new IllegalStateException();
+        throw new IllegalStateException();
     }
 
     @Override
     public void forward(IPlayer player) {
-        new IllegalStateException();
+        throw new IllegalStateException();
     }
 
     @Override

@@ -3,6 +3,12 @@ package fr.ensim.dp.map.player;
 public class Player implements IPlayer{
     private IStatePlayer state;
 
+
+    public IStatePlayer getState() {
+        return state;
+    }
+
+
     @Override
     public void play() {
         state.play(this);
@@ -28,8 +34,13 @@ public class Player implements IPlayer{
         state.backward(this);
     }
 
-    @Override
+//    @Override
+//    public void firechangeState(IStatePlayer state) {
+//        this.state = state;
+//    }
+
     public void firechangeState(IStatePlayer state) {
         this.state = state;
     }
+
 }

@@ -3,7 +3,7 @@ package fr.ensim.dp.map.player;
 public class StatePlay implements IStatePlayer{
     @Override
     public void play(IPlayer player) {
-        new IllegalStateException();
+        throw new IllegalStateException();
     }
 
     @Override
