@@ -1,6 +1,11 @@
 package fr.ensim.dp.cache.filter;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 
 public class CountFilterCache implements IFilterCache {
     private int countAdd = 0;
@@ -9,7 +14,7 @@ public class CountFilterCache implements IFilterCache {
 
 
     @Override
-    public byte[] doAdd(String key, byte[] buf) throws IOException {
+    public byte[] doAdd(String key, byte[] buf) throws IOException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException {
         countAdd++;
 
         if(next != null){
@@ -19,7 +24,7 @@ public class CountFilterCache implements IFilterCache {
     }
 
     @Override
-    public byte[] doRetreive(String key, byte[] buf) throws IOException {
+    public byte[] doRetreive(String key, byte[] buf) throws IOException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException {
         countRetrieve++;
 
         if(next != null){
